@@ -16,7 +16,7 @@
 - `docs/assignment_requirements.md`：作业说明摘录。
 - `docs/github_publish_steps.md`：按 HW1 风格整理的 GitHub 发布步骤。
 
-数据集、视频、训练过程目录和模型权重不放入 Git 仓库。大型文件可通过 GitHub Release、Google Drive 或百度网盘等方式单独上传，再把链接补入报告。
+数据集、视频、训练过程目录和模型权重不放入 Git 仓库。模型权重与演示视频通过 GitHub Release 单独提供。
 
 ## 环境
 
@@ -42,18 +42,11 @@ runs/
   task3_segmentation/
 ```
 
-公开仓库中不直接包含 `data/`、`runs/`、`*.pt`、`*.mp4`。当前已经准备好的本地压缩包为：
+公开仓库中不直接包含 `data/`、`runs/`、`*.pt`、`*.mp4`。当前 Release 下载地址为：
 
 ```text
-release_assets/hw2_weights.zip
-release_assets/hw2_tracking_demo.zip
-```
-
-上传 GitHub Release 后，推荐使用下面的命名：
-
-```text
-hw2_weights.zip
-hw2_tracking_demo.zip
+模型权重：https://github.com/lhrscw/deep-learning-spatial-intelligence-hw2/releases/download/v1.0.0/hw2_weights.zip
+跟踪演示视频与日志：https://github.com/lhrscw/deep-learning-spatial-intelligence-hw2/releases/download/v1.0.0/hw2_tracking_demo.zip
 ```
 
 ## 任务一：Flowers102 分类
@@ -218,9 +211,15 @@ python -m src.common.make_docx_report \
 python scripts/collect_outputs.py
 ```
 
-最终提交前需要在 Word 中补充小组成员、学号、分工、GitHub 仓库链接和权重下载链接，再手动导出 PDF。
+最终提交前需要在 Word 中补充小组成员、学号和分工，再手动导出 PDF。
 
 ## GitHub
+
+公开仓库：
+
+```text
+https://github.com/lhrscw/deep-learning-spatial-intelligence-hw2
+```
 
 发布步骤见：
 

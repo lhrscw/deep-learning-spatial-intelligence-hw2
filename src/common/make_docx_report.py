@@ -119,8 +119,15 @@ def build_report(output: Path, template: Path | None = None) -> None:
     add_paragraph(doc, "小组成员：待填写")
     add_paragraph(doc, "学号：待填写")
     add_paragraph(doc, "分工：待填写")
-    add_paragraph(doc, "代码仓库链接：待填写")
-    add_paragraph(doc, "模型权重下载地址：待填写")
+    add_paragraph(doc, "代码仓库链接：https://github.com/lhrscw/deep-learning-spatial-intelligence-hw2")
+    add_paragraph(
+        doc,
+        "模型权重下载地址：https://github.com/lhrscw/deep-learning-spatial-intelligence-hw2/releases/download/v1.0.0/hw2_weights.zip",
+    )
+    add_paragraph(
+        doc,
+        "跟踪演示视频与日志：https://github.com/lhrscw/deep-learning-spatial-intelligence-hw2/releases/download/v1.0.0/hw2_tracking_demo.zip",
+    )
 
     add_heading(doc, "摘要")
     add_paragraph(
@@ -221,7 +228,7 @@ def build_report(output: Path, template: Path | None = None) -> None:
     add_heading(doc, "四、总结与后续修改")
     add_paragraph(
         doc,
-        "当前代码已覆盖三个任务的核心要求：分类微调与消融、检测与跟踪计数、U-Net 从零搭建和 Dice Loss 对比。最终提交前需要填写首页小组信息、公开 GitHub 仓库链接和模型权重网盘地址，并可将 Task 1/2/3 按 README 的完整 epoch 配置继续训练以提升最终分数。",
+        "当前代码已覆盖三个任务的核心要求：分类微调与消融、检测与跟踪计数、U-Net 从零搭建和 Dice Loss 对比。最终提交前需要填写首页小组成员、学号和分工，并可将 Task 1/2/3 按 README 的完整 epoch 配置继续训练以提升最终分数。",
     )
     add_paragraph(
         doc,
