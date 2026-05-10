@@ -8,9 +8,9 @@ import fitz
 
 FIGURES = [
     ("Task 1 training curves", "reports/figures/task1_summary.png"),
-    ("Task 2 detection visualizations", "reports/figures/task2_summary.png"),
+    ("Task 2 detection and tracking overview", "reports/figures/task2_overview_grid.jpg"),
     ("Task 2 occlusion and dense crossing frames", "reports/figures/task2_occlusion_grid.jpg"),
-    ("Task 3 training curves", "reports/figures/task3_summary.png"),
+    ("Task 3 loss comparison grid", "reports/figures/task3_loss_grid.png"),
 ]
 
 

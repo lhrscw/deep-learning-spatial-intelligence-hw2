@@ -120,11 +120,13 @@ def copy_report_assets() -> None:
 
     figure_names = [
         "task1_summary.png",
+        "task2_overview_grid.jpg",
         "task2_summary.png",
         "task2_occlusion_grid.jpg",
         "task2_yolov8_results.png",
         "task2_val_batch0_pred.jpg",
         "task2_confusion_matrix.png",
+        "task3_loss_grid.png",
         "task3_summary.png",
     ]
     for name in figure_names:
