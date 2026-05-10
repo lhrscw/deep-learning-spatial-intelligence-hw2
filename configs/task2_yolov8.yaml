@@ -1,0 +1,14 @@
+data: data/road_vehicle/yolo/data.yaml
+model: yolov8n.pt
+epochs: 80
+imgsz: 640
+batch: 16
+device: "0"
+workers: 4
+project: runs/task2_detection
+name: yolov8n_road_vehicle
+tracking:
+  weights: runs/task2_detection/yolov8n_road_vehicle/weights/best.pt
+  tracker: botsort.yaml
+  line: ""
+  output_dir: runs/task2_detection/tracking

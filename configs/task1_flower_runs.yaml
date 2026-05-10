@@ -1,0 +1,43 @@
+runs:
+  - name: resnet18_pretrained_lr1e-4_1e-3
+    command: >
+      python -m src.task1_flowers.train_flowers
+      --run-name resnet18_pretrained_lr1e-4_1e-3
+      --model resnet18
+      --epochs 30
+      --batch-size 64
+      --backbone-lr 1e-4
+      --head-lr 1e-3
+      --amp
+  - name: resnet18_pretrained_lr3e-5_3e-4
+    command: >
+      python -m src.task1_flowers.train_flowers
+      --run-name resnet18_pretrained_lr3e-5_3e-4
+      --model resnet18
+      --epochs 30
+      --batch-size 64
+      --backbone-lr 3e-5
+      --head-lr 3e-4
+      --amp
+  - name: resnet18_random_init
+    command: >
+      python -m src.task1_flowers.train_flowers
+      --run-name resnet18_random_init
+      --model resnet18
+      --random-init
+      --epochs 30
+      --batch-size 64
+      --backbone-lr 1e-3
+      --head-lr 1e-3
+      --amp
+  - name: resnet18_se_pretrained
+    command: >
+      python -m src.task1_flowers.train_flowers
+      --run-name resnet18_se_pretrained
+      --model resnet18
+      --attention se
+      --epochs 30
+      --batch-size 64
+      --backbone-lr 1e-4
+      --head-lr 1e-3
+      --amp

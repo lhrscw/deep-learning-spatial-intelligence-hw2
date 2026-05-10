@@ -1,0 +1,16 @@
+{
+  "model": "yolov8n",
+  "epochs": 20,
+  "best_epoch": 20,
+  "precision": 0.6241,
+  "recall": 0.3487,
+  "mAP50": 0.377,
+  "mAP50_95": 0.2228,
+  "results_csv": "runs/task2_detection/yolov8n_road_vehicle_e20/results.csv",
+  "weights": "runs/task2_detection/yolov8n_road_vehicle_e20/weights/best.pt",
+  "tracking_rows": 2677,
+  "unique_tracking_ids": 67,
+  "line_crossing_count": 9,
+  "tracking_log": "runs/task2_detection/tracking_demo/tracking_log.csv",
+  "tracked_video": "runs/task2_detection/tracking_demo/tracked_counted.mp4"
+}

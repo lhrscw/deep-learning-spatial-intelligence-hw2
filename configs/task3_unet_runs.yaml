@@ -1,0 +1,25 @@
+runs:
+  - name: unet_ce
+    command: >
+      python -m src.task3_segmentation.train_unet
+      --loss ce
+      --epochs 50
+      --batch-size 8
+      --lr 1e-3
+      --base-channels 32
+  - name: unet_dice
+    command: >
+      python -m src.task3_segmentation.train_unet
+      --loss dice
+      --epochs 50
+      --batch-size 8
+      --lr 1e-3
+      --base-channels 32
+  - name: unet_ce_dice
+    command: >
+      python -m src.task3_segmentation.train_unet
+      --loss ce_dice
+      --epochs 50
+      --batch-size 8
+      --lr 1e-3
+      --base-channels 32

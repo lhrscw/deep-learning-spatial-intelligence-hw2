@@ -1,0 +1,13 @@
+torch
+torchvision
+ultralytics
+opencv-python
+numpy
+pandas
+matplotlib
+tqdm
+PyYAML
+Pillow
+python-docx
+PyMuPDF
+wandb

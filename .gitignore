@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.DS_Store
+
+# Local environments
+.env
+.venv/
+venv/
+
+# Large datasets and generated experiment outputs.
+data/
+runs/
+weights/
+release_assets/
+*.pt
+*.pth
+*.mp4
+
+# Assignment handout; keep generated reports instead.
+HW2_深度学习与空间智能*.pdf
+
+# Local logging.
+wandb/
+swanlog/

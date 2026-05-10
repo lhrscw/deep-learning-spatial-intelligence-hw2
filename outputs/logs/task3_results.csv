@@ -1,0 +1,4 @@
+loss,best_epoch,val_pixel_acc,val_miou,metrics,weights
+ce,9,0.7851,0.5394,runs/task3_segmentation/unet_ce/metrics.csv,runs/task3_segmentation/unet_ce/best.pt
+dice,9,0.7484,0.5033,runs/task3_segmentation/unet_dice/metrics.csv,runs/task3_segmentation/unet_dice/best.pt
+ce_dice,9,0.7775,0.5308,runs/task3_segmentation/unet_ce_dice/metrics.csv,runs/task3_segmentation/unet_ce_dice/best.pt
