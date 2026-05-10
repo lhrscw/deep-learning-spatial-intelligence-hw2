@@ -184,6 +184,7 @@ def build_report(output: Path, template: Path | None = None) -> None:
         ],
         "表2 三个任务的目标与结果概览",
     )
+    add_picture_if_exists(doc, "reports/figures/flow_overall_hw2_gpt55.png", "图1 GPT-5.5 设计的 HW2 三任务总流程图", width_cm=15.5)
 
     add_heading(doc, "二、数据来源与预处理")
     add_paragraph(
@@ -210,6 +211,7 @@ def build_report(output: Path, template: Path | None = None) -> None:
     )
 
     add_heading(doc, "三、任务一：Flowers102 图像分类")
+    add_picture_if_exists(doc, "reports/figures/flow_task1_flowers_gpt55.png", "图2 GPT-5.5 设计的 Flowers102 分类流程图", width_cm=15.5)
     add_heading(doc, "3.1 模型结构与训练策略", level=2)
     add_paragraph(
         doc,
@@ -250,10 +252,10 @@ def build_report(output: Path, template: Path | None = None) -> None:
         ],
         "表5 Flowers102 分类结果",
     )
-    add_picture_if_exists(doc, "reports/figures/task1_summary.png", "图1 Flowers102 四组实验训练曲线汇总", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task1_resnet18_pretrained.png", "图2 ResNet-18 预训练 baseline 训练曲线", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task1_resnet18_random.png", "图3 ResNet-18 随机初始化消融曲线", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task1_resnet18_se.png", "图4 ResNet-18 + SE-block 训练曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task1_summary.png", "图3 Flowers102 四组实验训练曲线汇总", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task1_resnet18_pretrained.png", "图4 ResNet-18 预训练 baseline 训练曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task1_resnet18_random.png", "图5 ResNet-18 随机初始化消融曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task1_resnet18_se.png", "图6 ResNet-18 + SE-block 训练曲线", width_cm=15.5)
     add_paragraph(
         doc,
         "从图1至图4可以看出，ImageNet 初始化带来的优势不仅体现在最终准确率，也体现在早期训练的稳定性。随机初始化曲线提升较慢，说明模型需要先从花卉数据中学习通用边缘和纹理，再学习类别判别；但 Flowers102 训练集规模有限，8 epoch 内很难充分完成这一过程。低学习率预训练组虽然同样使用 ImageNet 权重，但分类头学习速度不足，导致验证和测试准确率明显低于 baseline。SE-block 版本在验证集达到 0.8980，说明通道重标定对花卉细粒度纹理有一定帮助。",
@@ -264,6 +266,7 @@ def build_report(output: Path, template: Path | None = None) -> None:
     )
 
     add_heading(doc, "四、任务二：Road Vehicle 检测、跟踪与计数")
+    add_picture_if_exists(doc, "reports/figures/flow_task2_tracking_gpt55.png", "图7 GPT-5.5 设计的道路车辆检测、跟踪与计数流程图", width_cm=15.5)
     add_heading(doc, "4.1 YOLOv8 检测模型", level=2)
     add_paragraph(
         doc,
@@ -292,12 +295,12 @@ def build_report(output: Path, template: Path | None = None) -> None:
         [["20", "0.6241", "0.3487", "0.3770", "0.2228"]],
         "表7 YOLOv8 验证结果",
     )
-    add_picture_if_exists(doc, "reports/figures/task2_yolov8_results.png", "图5 YOLOv8 训练过程指标曲线", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task2_val_batch0_pred.jpg", "图6 Road Vehicle 验证集预测示例", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task2_confusion_matrix.png", "图7 YOLOv8 验证集混淆矩阵", width_cm=14.0)
+    add_picture_if_exists(doc, "reports/figures/task2_yolov8_results.png", "图8 YOLOv8 训练过程指标曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task2_val_batch0_pred.jpg", "图9 Road Vehicle 验证集预测示例", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task2_confusion_matrix.png", "图10 YOLOv8 验证集混淆矩阵", width_cm=14.0)
     add_paragraph(
         doc,
-        "图5展示了训练过程中的损失和 mAP 指标变化。随着 epoch 增加，模型逐步降低定位和分类损失，mAP50 在后期继续上升，说明 20 epoch 并未完全收敛。图6中的验证集预测可以直观看到模型已经能够定位多数车辆目标，但对密集目标、远距离小目标和相似类别仍会出现漏检或混淆。图7的混淆矩阵进一步说明，多类别车辆检测的主要困难来自类别外观相近和标注类别粒度较细。",
+        "图8展示了训练过程中的损失和 mAP 指标变化。随着 epoch 增加，模型逐步降低定位和分类损失，mAP50 在后期继续上升，说明 20 epoch 并未完全收敛。图9中的验证集预测可以直观看到模型已经能够定位多数车辆目标，但对密集目标、远距离小目标和相似类别仍会出现漏检或混淆。图10的混淆矩阵进一步说明，多类别车辆检测的主要困难来自类别外观相近和标注类别粒度较细。",
     )
 
     add_heading(doc, "4.2 多目标跟踪、遮挡分析与越线计数", level=2)
@@ -322,11 +325,11 @@ def build_report(output: Path, template: Path | None = None) -> None:
         ],
         "表8 跟踪与越线计数结果",
     )
-    add_picture_if_exists(doc, "reports/figures/task2_overview_grid.jpg", "图8 检测、预测、混淆矩阵和遮挡片段 2×2 概览图", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task2_occlusion_grid.jpg", "图9 连续 4 帧遮挡与密集交汇片段", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task2_overview_grid.jpg", "图11 检测、预测、混淆矩阵和遮挡片段 2×2 概览图", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task2_occlusion_grid.jpg", "图12 连续 4 帧遮挡与密集交汇片段", width_cm=15.5)
     add_paragraph(
         doc,
-        "图9展示了连续 4 帧中多目标靠近虚拟线的过程。该片段的分析重点不是单帧检测框是否完全准确，而是同一目标在相邻帧中是否保持相同 ID。多数目标在连续帧中可以维持 ID，说明运动关联在短时间内较稳定；但当车辆框重叠、目标被部分遮挡或检测置信度降低时，跟踪器仍可能出现短暂丢失和新 ID。越线计数依赖 ID 连续性，因此 ID switch 会带来漏计或重复计风险。",
+        "图12展示了连续 4 帧中多目标靠近虚拟线的过程。该片段的分析重点不是单帧检测框是否完全准确，而是同一目标在相邻帧中是否保持相同 ID。多数目标在连续帧中可以维持 ID，说明运动关联在短时间内较稳定；但当车辆框重叠、目标被部分遮挡或检测置信度降低时，跟踪器仍可能出现短暂丢失和新 ID。越线计数依赖 ID 连续性，因此 ID switch 会带来漏计或重复计风险。",
     )
     add_paragraph(
         doc,
@@ -334,6 +337,7 @@ def build_report(output: Path, template: Path | None = None) -> None:
     )
 
     add_heading(doc, "五、任务三：U-Net 语义分割与损失函数工程")
+    add_picture_if_exists(doc, "reports/figures/flow_task3_unet_gpt55.png", "图13 GPT-5.5 设计的 U-Net 分割与损失对比流程图", width_cm=15.5)
     add_heading(doc, "5.1 U-Net 结构设计", level=2)
     add_paragraph(
         doc,
@@ -375,13 +379,13 @@ def build_report(output: Path, template: Path | None = None) -> None:
         ],
         "表10 U-Net 分割结果",
     )
-    add_picture_if_exists(doc, "reports/figures/task3_loss_grid.png", "图10 U-Net 三种损失配置 2×2 对比图", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task3_unet_ce.png", "图11 Cross-Entropy Loss 训练曲线", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task3_unet_dice.png", "图12 Dice Loss 训练曲线", width_cm=15.5)
-    add_picture_if_exists(doc, "reports/figures/task3_unet_ce_dice.png", "图13 CE+Dice Loss 训练曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task3_loss_grid.png", "图14 U-Net 三种损失配置 2×2 对比图", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task3_unet_ce.png", "图15 Cross-Entropy Loss 训练曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task3_unet_dice.png", "图16 Dice Loss 训练曲线", width_cm=15.5)
+    add_picture_if_exists(doc, "reports/figures/task3_unet_ce_dice.png", "图17 CE+Dice Loss 训练曲线", width_cm=15.5)
     add_paragraph(
         doc,
-        "图10至图13显示，三种损失在训练后期均有提升，但收敛速度和稳定性不同。CE 曲线整体更平滑，验证 mIoU 也最高；Dice Loss 在区域重叠目标上更直接，但对类别分布和预测概率更敏感；CE+Dice 同时受到两种损失影响，验证性能介于二者之间。若继续训练到 50 epoch，可以观察 CE+Dice 是否在边界和小区域类别上逐渐超过单独 CE。",
+        "图14至图17显示，三种损失在训练后期均有提升，但收敛速度和稳定性不同。CE 曲线整体更平滑，验证 mIoU 也最高；Dice Loss 在区域重叠目标上更直接，但对类别分布和预测概率更敏感；CE+Dice 同时受到两种损失影响，验证性能介于二者之间。若继续训练到 50 epoch，可以观察 CE+Dice 是否在边界和小区域类别上逐渐超过单独 CE。",
     )
 
     add_heading(doc, "六、综合讨论")

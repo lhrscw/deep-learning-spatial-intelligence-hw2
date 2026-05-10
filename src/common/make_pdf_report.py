@@ -7,9 +7,13 @@ import fitz
 
 
 FIGURES = [
+    ("HW2 workflow overview", "reports/figures/flow_overall_hw2_gpt55.png"),
+    ("Task 1 classification workflow", "reports/figures/flow_task1_flowers_gpt55.png"),
     ("Task 1 training curves", "reports/figures/task1_summary.png"),
+    ("Task 2 tracking workflow", "reports/figures/flow_task2_tracking_gpt55.png"),
     ("Task 2 detection and tracking overview", "reports/figures/task2_overview_grid.jpg"),
     ("Task 2 occlusion and dense crossing frames", "reports/figures/task2_occlusion_grid.jpg"),
+    ("Task 3 segmentation workflow", "reports/figures/flow_task3_unet_gpt55.png"),
     ("Task 3 loss comparison grid", "reports/figures/task3_loss_grid.png"),
 ]
 

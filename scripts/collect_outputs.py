@@ -119,6 +119,10 @@ def copy_report_assets() -> None:
         copy_if_exists(report_dir / name, out_report / name)
 
     figure_names = [
+        "flow_overall_hw2_gpt55.png",
+        "flow_task1_flowers_gpt55.png",
+        "flow_task2_tracking_gpt55.png",
+        "flow_task3_unet_gpt55.png",
         "task1_summary.png",
         "task2_overview_grid.jpg",
         "task2_summary.png",
